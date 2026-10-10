@@ -1,0 +1,14 @@
+# MergeMind policy for this sandbox (short timers so you can watch the whole flow)
+autonomy: merge
+maintainers: [akii-codes]
+access:
+  mode: collaborator
+  ttl: 30m
+  checkin_at: 50%
+  min_account_age: 0d
+pr:
+  require_regression_test: true
+  ci_timeout: 20m
+  post_merge_watch: 3m
+guard:
+  sensitive_paths: [".env*", "**/.env*", "deploy/**", "**/secrets/**"]
